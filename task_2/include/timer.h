@@ -11,10 +11,10 @@ public:
     {
         auto end = std::chrono::steady_clock::now();
 
+        auto s = std::chrono::duration_cast<std::chrono::minutes>(end - start);
         auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
-        auto s = std::chrono::duration_cast<std::chrono::seconds>(end - start);
 
-        std::cout << "Execution time: " << s.count() << "seconds | " << ms.count() << "milliseconds" << std::endl;
+        std::cout << "Execution time: " << s.count() << " minutes | " << ms.count() << " milliseconds" << std::endl;
     }
 
 private:
